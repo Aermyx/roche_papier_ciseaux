@@ -17,7 +17,6 @@ body {
 .fondFormulaire {
     position: fixed;
     top: 0;
-    z-index: -1;
     background-color: #272635;
     width: 100vw;
     height: 100vh;
@@ -82,7 +81,6 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -2;
 }
 
 .joueur {
@@ -131,8 +129,7 @@ p {
     height: 40px;
     border-radius: 20px;
     border: 0;
-    width: 10%;
-    z-index: 1;
+    width: 160px;
     position: absolute;
     bottom: 8%;
     left: 50%;
@@ -141,4 +138,5 @@ p {
     justify-content: center;
     align-items: center;
     background-color: white;
+    cursor: context-menu;
 }
