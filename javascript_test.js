@@ -2,14 +2,14 @@
 //Game
 class Game {
     constructor() {
-
+        this.afficherNomJoueur();
+        this.couleurJoueur();
     }
     
     afficherNomJoueur() {
         const valeurNomJoueur = document.form01.nom.value;
         const resultatNomJoueur = document.querySelector(".nomJoueur")
         resultatNomJoueur.innerHTML = `<span>${valeurNomJoueur}</span>`;
-        resultatNomJoueur.appendChild(valeurNomJoueur);
     }
 
     couleurJoueur() {
@@ -86,6 +86,8 @@ actionJoueur.innerHTML = `<span>${jeuJoueur}</span>`;
 //Disparaître Formulaire
     document.querySelector(".boxFormulaire").classList.add("none");
     document.querySelector(".fondFormulaire").classList.add("none");
+
+    new Game();
 })
 
 
