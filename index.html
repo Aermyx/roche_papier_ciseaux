@@ -7,25 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="boxGame">
+        <div class="joueur">
+            <div class="nomJoueur"></div>
+            <div class="choixJoueur"></div>
+        </div>
+        <div class="cpu">
+            <div class="nomCpu">CPU</div>
+            <div class="choixCpu"></div>
+        </div>
+        <div class="resultat">Victoire</div>
+        <div class="btnRejouer">Rejouer</div>
+    </div>
     <div class="fondFormulaire"></div>
     <div class="boxFormulaire">
-        <form class=formulaire>
+        <form class="formulaire" name="form01">
             <p>
                 <label>Nom</label><br>
-                <input type="text" name="Nom" id="name">
+                <input type="text" name="nom" onfocus="this.value=''" id="name">
             </p>
             <p>
                 <label>Peau</label><br>
                 <div class="radio">
-                    <input type="radio" name="Peau" id="choixJaune">👋
-                    <input type="radio" name="Peau" id="choixBlanc">👋🏻
-                    <input type="radio" name="Peau" id="choixBalzane">👋🏽
-                    <input type="radio" name="Peau" id="choixNoir">👋🏿
+                    <input type="radio" name="Peau" id="choixJaune" value="0" checked="checked">👋
+                    <input type="radio" name="Peau" id="choixBlanc" value="1">👋🏻
+                    <input type="radio" name="Peau" id="choixBalzane" value="2">👋🏽
+                    <input type="radio" name="Peau" id="choixNoir" value="3">👋🏿
                 </div>
             </p>
             <p>
                 <label>Choix</label><br>
-                <select name="Action" id="choix">
+                <select name="action" id="choix">
                     <option value="roche">🥔</option>
                     <option value="papier">📄</option>
                     <option value="ciseaux">✂️</option>
@@ -36,18 +48,7 @@
             </p>
         </form>
     </div>
-    <div class="boxGame">
-        <div class="joueur">
-            <div class="nomJoueur">Joueur</div>
-            <div class="choixJoueur"></div>
-        </div>
-        <div class="cpu">
-            <div class="nomCpu">CPU</div>
-            <div class="choixCpu"></div>
-        </div>
-        <div class="resultat">Victoire</div>
-        <div class="btnRejouer">Rejouer</div>
-    </div>
-    <script src="javascript.js"></script>
+    
+    <script src="javascript_test.js"></script>
 </body>
 </html>
