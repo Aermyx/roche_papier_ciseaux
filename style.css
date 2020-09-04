@@ -44,7 +44,7 @@ p {
     margin: 10px 0;
 }
 
-#name {
+.name {
     height: 40px;
     border-radius: 20px;
     border: 0;
@@ -58,7 +58,7 @@ p {
     justify-content: space-around;
 }
 
-#choix {
+.choix {
     height: 40px;
     border-radius: 20px;
     border: 0;
@@ -68,7 +68,7 @@ p {
     padding: 10px;
 }
 
-#jouer {
+.jouer {
     height: 40px;
     border-radius: 20px;
     border: 0;
@@ -98,16 +98,7 @@ p {
     right: 0;
 }
 
-.nomJoueur {
-    position: absolute;
-    font-size: 50px;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-}
-
-.nomCpu {
+.nomJoueur, .nomCpu {
     position: absolute;
     font-size: 50px;
     top: 10%;
@@ -139,4 +130,12 @@ p {
     align-items: center;
     background-color: white;
     cursor: context-menu;
+}
+
+.choixJoueur, .choixCpu {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    font-size: 150px;
+    transform: translate(-50%, -50%);
 }
