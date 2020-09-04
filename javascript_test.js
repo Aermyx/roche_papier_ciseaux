@@ -1,10 +1,18 @@
 
+const listChoix = [
+    ["✊", "✋", "✌️"],
+    ["✊🏻", "✋🏻", "✌🏻"],
+    ["✊🏽", "✋🏽", "✌🏽"],
+    ["✊🏿", "✋🏿", "✌🏿"],
+];
+
 //Game
 class Game {
     constructor() {
         this.afficherNomJoueur();
         this.afficherActionJoueur();
         this.afficherActionCpu();
+        this.resultatMatch();
     }
     
     afficherNomJoueur() {
@@ -14,28 +22,32 @@ class Game {
     }
 
     afficherActionJoueur() {
-        //Couleur
+        //Couleur Joueur
         const listCouleurPeau = document.form01.Peau;
         const couleurPeau = listCouleurPeau.value;
-        //Action
+        //Action Joueur
         const choixMain = document.form01.action.selectedIndex;
-        //Résultats
-        const listChoix = [
-            ["✊", "✋", "✌️"],
-            ["✊🏻", "✋🏻", "✌🏻"],
-            ["✊🏽", "✋🏽", "✌🏽"],
-            ["✊🏿", "✋🏿", "✌🏿"],
-        ];
+        //Résultats Joueur
         const couleurJoueur = listChoix[couleurPeau];
         const actionJoueur = couleurJoueur[choixMain];
-        //Affichage
+        //Affichage Joueur
         const resultatJoueur = document.querySelector(".choixJoueur");
         resultatJoueur.innerHTML = `<span>${actionJoueur}</span>`;
     }
 
     afficherActionCpu() {
-        const couleurCpu = listChoix[indexRandom];
-        console.log(couleurCpu)
+        //Couleur CPU
+        const couleurRandom = Math.round( Math.random() * 3 );
+        const couleurCpu = listChoix[couleurRandom];
+
+        //Action CPU
+        const actionRandom = Math.round( Math.random() * 2 );
+        const actionCpu = couleurCpu[actionRandom];
+
+        //Affichage CPU
+        const resultatCpu = document.querySelector(".choixCpu");
+        resultatCpu.innerHTML = `<span>${actionCpu}</span>`;
+        return actionRandom;
     }
 }
 
