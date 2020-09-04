@@ -1,11 +1,4 @@
 
-/*const listChoix = [
-    ["✊", "✋", "✌️"],
-    ["✊🏻", "✋🏻", "✌🏻"],
-    ["✊🏽", "✋🏽", "✌🏽"],
-    ["✊🏿", "✋🏿", "✌🏿"],
-];*/
-
 //Game
 class Game {
     constructor() {
@@ -62,11 +55,14 @@ class Game {
         const halfCpu = document.querySelector(".cpu");
         const resultat = document.querySelector(".resultat");
 
+        //Égalité
         if(this.choixMain == this.actionRandom) {
             halfJoueur.style.setProperty("--fondJoueur", "#3F88C5");
             halfCpu.style.setProperty("--fondCpu", "#3F88C5");
             resultat.innerHTML = "<span>Égalité</span>";
         }
+
+        //Défaite
         else if(
             this.choixMain == 0 && this.actionRandom == 1 ||
             this.choixMain == 1 && this.actionRandom == 2 ||
@@ -75,6 +71,8 @@ class Game {
                 halfCpu.style.setProperty("--fondCpu", "#7FD8BE");
                 resultat.innerHTML = "<span>Défaite</span>";
             }
+
+        //Victoire
         else {
             halfJoueur.style.setProperty("--fondJoueur", "#7FD8BE");
             halfCpu.style.setProperty("--fondCpu", " #D16D82");
@@ -86,20 +84,16 @@ class Game {
 
 //INTERACTION----------------------------------------------------------
 
-
-//Jouer
 const btnJouer = document.querySelector(".jouer");
 const btnRejouer = document.querySelector(".btnRejouer");
 
+//Jouer
 btnJouer.addEventListener("click", () => {
-
-//Disparaître Formulaire
     document.querySelector(".boxFormulaire").classList.add("none");
     document.querySelector(".fondFormulaire").classList.add("none");
 
     const game = new Game();
 })
-
 
 //Rejouer
 btnRejouer.addEventListener("click", () =>{
